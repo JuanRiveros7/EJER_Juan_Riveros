@@ -5,42 +5,55 @@ body {
   padding: 0;
 }
 
-header.encabezado {
+/* Encabezado */
+.encabezado {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
   background-color: #d9ffcc;
   border: 2px solid #66cc00;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px 30px;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
 
-header h1 {
+.logo-bancoop {
+  flex: 1 1 60%;
+}
+
+.logo-bancoop h1 {
   color: #33cc00;
   font-size: 2.5em;
   margin: 0;
   text-shadow: 0 0 5px #00ff00;
 }
 
-header p {
+.logo-bancoop p {
   font-size: 1.2em;
-  margin: 10px 0 0;
+  margin-top: 5px;
+}
+
+.imagen-bancoop {
+  flex: 0 1 auto;
+  text-align: right;
 }
 
 .banner-img {
-  width: 150px;
-  display: block;
-  margin: 0% auto; 
+  width: 100px;
+  height: auto;
+  margin-left: auto;
 }
 
+/* Navegación */
 nav.barra-navegacion {
   background-color: #ccff99;
   border: 2px solid #66cc00;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 8px;
   text-align: center;
+  max-width: 1200px;
 }
 
 nav ul {
@@ -49,6 +62,7 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 50px;
+  margin: 0;
 }
 
 nav ul li a {
@@ -57,10 +71,13 @@ nav ul li a {
   color: #336600;
 }
 
+/* Contenedor general */
 .contenedor {
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .lateral {
@@ -73,7 +90,8 @@ nav ul li a {
   border-radius: 8px;
 }
 
-.lateral input, .lateral button {
+.lateral input,
+.lateral button {
   width: 100%;
   margin: 5px 0;
   padding: 6px;
@@ -117,6 +135,7 @@ nav ul li a {
   border-radius: 8px;
 }
 
+/* Pie de página */
 footer {
   background-color: #66cc00;
   color: white;
@@ -125,12 +144,14 @@ footer {
   margin-top: 20px;
 }
 
+/* Menú móvil */
 .menu {
   background-color: #ccff99;
   border: 2px solid #66cc00;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 8px;
   text-align: center;
+  max-width: 1200px;
   position: relative;
 }
 
@@ -162,20 +183,36 @@ footer {
   color: #336600;
 }
 
-/* NUEVO: centrado general */
+/* Centrado general */
 .main-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Vista móvil */
+/* Responsivo */
 @media (max-width: 768px) {
-  .nav-links {
+  .encabezado {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-bancoop,
+  .imagen-bancoop {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .banner-img {
+    margin-top: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column-reverse;
     display: none;
     background-color: #ccff99;
     padding: 20px 0;
+    text-align: center;
   }
 
   .menu-icon {
